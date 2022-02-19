@@ -101,6 +101,7 @@
       <div class="hero-body">
         <div class="container has-text-centered" style="font-family: 'Noto Sans Mono', monospace;">
           <p class="title" id="intro">
+              Hello everyone,
           </p>
           <span class="subtitle" style="font-family: 'Athiti', sans-serif;" id='intro2'></span>
         </div>
@@ -379,7 +380,7 @@
   <script>
 
 var typed = new Typed('#intro2', {
-  strings: ["it's nice to meet you","let's be over the moon!","how do you do?","have a nice day","stay hydrated!"],
+  strings: ["welcome to ord world","it's nice to meet you","let's be over the moon!","how do you do?","have a nice day","stay hydrated!"],
   typeSpeed:60,
   backSpeed:30,
   loop:true
