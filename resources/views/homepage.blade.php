@@ -338,8 +338,9 @@
     <footer class="card-footer">
       <p class="card-footer-item">
         <span>
-          <a :class="{ 'is-active': showMoreEdu }"
-          @click="showMoreEdu = !showMoreEdu" > Relevant Courses </a>
+          <!-- <a :class="{ 'is-active': showMoreEdu }"
+          @click="showMoreEdu = !showMoreEdu" > Relevant Courses </a> -->
+          <a href="/posts"> Relevant Courses </a>
         </span>
       </p>
     </footer>
