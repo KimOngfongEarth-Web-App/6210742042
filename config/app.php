@@ -194,4 +194,9 @@ return [
         // ...
     ])->toArray(),
 
+    // 'providers' => [
+    //     // ...
+    //     Kreait\Laravel\Firebase\ServiceProvider::class
+    // ],
+
 ];
