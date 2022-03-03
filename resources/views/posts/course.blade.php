@@ -12,9 +12,10 @@
 <style>
     /* body {font-family: 'Athiti', sans-serif;} */
     body {font-family: 'Roboto', sans-serif;
+        width:60%;
         margin-top: 10%;
-        margin-left:10%;
-        margin-right:10%;}
+        margin-left:20%;
+        margin-right:20%;}
 
     
 </style>
@@ -23,8 +24,9 @@
 
 <div class='content'>
 
-<h1>Course CRUD <a role="button is-info" href='/posts/create'> (Add) </a> </h1> 
+<h1>My Relevent Courses</h1> 
 
+<input class="input" type="text" placeholder="Search...">
 
 <table class="table">
   <thead>
@@ -39,10 +41,10 @@
 
   @foreach($posts as $post)
     <tr>
-      <td> <a href='/posts/{{ $post-> id }}/edit'>{{ $post->title }}</a></td>
+      <th>{{ $post->title }}</th>
       <th>{{ $post->content }}</th>
     </tr>
-@endforeach
+  @endforeach
 
   </tbody>
 </table>

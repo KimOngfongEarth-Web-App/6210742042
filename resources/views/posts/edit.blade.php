@@ -9,10 +9,12 @@
 
 <style>
     /* body {font-family: 'Athiti', sans-serif;} */
-    body {font-family: 'Roboto', sans-serif;}
-    .block {margin-left:7.5% ; margin-right: 7.5%;}
-    .columns {margin-left:7.5% ; margin-right: 7.5%;}
-    #app2 {font-family: 'Athiti', sans-serif;}
+    body {font-family: 'Roboto', sans-serif;
+    width:40%;
+    margin-left:30%;
+    margin-right:30%;
+    margin-top:10%}
+    
     
 </style>
 </head>
@@ -27,7 +29,7 @@
 @csrf
     
 
-    <div class="field">
+  <div class="field">
   <label class="label">Title</label>
   <div class="control">
     <input class="input" type="text" id="title" name="title" value="{{ $post->title }}">
@@ -42,8 +44,11 @@
 </div>
 
 
-<button class="button is-primary">Update</button>
+<button class="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit">
+              Update
+</button>
 
+</form>
 
 <form action="/posts/{{ $post->id }}">
 
@@ -51,15 +56,11 @@
 
   @method('DELETE')
 
-  <button class="button is-danger">Delete</button>
+  <button class="button is-block is-fullwidth is-danger is-medium is-rounded" type="submit">
+              Delete
+  </button>
 </form>
 
-  </form>
-
-
-  
-</div>
-</form>
 
 
 </body>

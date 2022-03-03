@@ -30,7 +30,8 @@
 
 <!-- bulma css -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-
+<link rel="stylesheet" type="text/css" href="../css/hero.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
 
 <style>
     /* body {font-family: 'Athiti', sans-serif;} */
@@ -38,13 +39,29 @@
     .block {margin-left:7.5% ; margin-right: 7.5%;}
     .columns {margin-left:7.5% ; margin-right: 7.5%;}
     #app2 {font-family: 'Athiti', sans-serif;}
+    .hero.has-background {
+  position: relative;
+  overflow: hidden;
+}
+.hero-background {
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+.hero-background.is-transparent {
+  opacity: 0.3;
+}
     
 </style>
 
 </head>
 <body>
 
-    <section class="hero is-light is-fullheight" style="margin-bottom: 5%;">
+    <section class="hero is-light is-fullheight has-background" style="margin-bottom: 5%;">
+
+    <img alt="Fill Murray" class="hero-background is-transparent" src="./image/heroBg.png" />
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <div id="app">
@@ -68,7 +85,7 @@
                   <a class="navbar-item">
                     intro
                   </a>
-                  <!-- <div class="navbar-item has-dropdown is-hoverable">
+                  <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                       chapter
                     </a>
@@ -81,11 +98,11 @@
                         chapter two: a books
                       </a>
                       <a class="navbar-item">
-                        chapter three: quote and my question
+                        chapter three: blog
                       </a>
                       
                     </div>
-                  </div> -->
+                  </div>
                 </div>
     
                 </div>
@@ -129,15 +146,15 @@
   <nav class="tabs">
     <div class="container">
       <ul>
-        <li><a @click="goto('abt')" role="button">About me</a></li>
-        <li><a @click="goto('myProj')" role="button">Project</a></li>
-        <li><a @click="goto('edu')" role="button">Education</a></li>
+        <li><a onclick="goTo('abt')" role="button">About me</a></li>
+        <li><a onclick="goTo('myProj')" role="button">Project</a></li>
+        <li><a onclick="goTo('edu')" role="button">Education</a></li>
         
       </ul>
     </div>
   </nav>
 
-  <div class="block" ref="abt">
+  <div class="block" id="abt">
     <span class="tag is-dark">
       ABOUT ME
     </span>
@@ -186,7 +203,7 @@
    </div>
   </div>
 
-  <div class="block" ref="myProj">
+  <div class="block" id="myProj">
     <span class="tag is-dark">
       MY PROJECT
     </span>
@@ -194,7 +211,7 @@
 
   <div class="columns is-desktop">
 
-    <div class="column is-one-third">
+    <div class="column is-one-quarter">
       <div class="block">
         <div class="card">
           <div class="card-image">
@@ -252,7 +269,7 @@
       </div>
     </div>
     
-    <div class="column is-one-third">
+    <div class="column is-one-quarter">
       <div class="block">
         <div class="card">
           <div class="card-image">
@@ -289,7 +306,7 @@
       </div>
     </div>
 
-    <div class="column is-one-third">
+    <div class="column is-one-quarter">
       <div class="block">
         <div class="card">
           <div class="card-image">
@@ -318,9 +335,38 @@
     </div>
 
 
+    <div class="column is-one-quarter">
+      <div class="block">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-3by4">
+              <img src="./image/ml_proj.pdf" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">ML: Face Recognition</p>
+                <p class="subtitle is-6">web application</p>
+              </div>
+            </div>
+        
+            <div class="content">
+            The Data Science Project. Collect data, Train model, improve efficiency by do the experimental and deploy to web platform.
+              <br>  <br> 
+              <!-- <a href="https://nosalimhost.web.app">nosalim.web.app</a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
  </div>
 
- <div class="block" ref="edu">
+ 
+
+ <div class="block" id="edu">
   <span class="tag is-dark">
     EDUCATION
   </span>
@@ -339,9 +385,7 @@
     <footer class="card-footer">
       <p class="card-footer-item">
         <span>
-          <!-- <a :class="{ 'is-active': showMoreEdu }"
-          @click="showMoreEdu = !showMoreEdu" > Relevant Courses </a> -->
-          <a href="/posts"> Relevant Courses </a>
+          <a href="/course"> Relevant Courses </a>
         </span>
       </p>
     </footer>
@@ -388,7 +432,14 @@ var typed = new Typed('#intro2', {
   loop:true
 });
 
-  </script>
+function goTo(element) {
+  var elmnt = document.getElementById(element);
+  elmnt.scrollIntoView();
+}
+
+
+
+</script>
 <script src="./typed.js"></script>
 <script src="./script.js"></script>
 </body>

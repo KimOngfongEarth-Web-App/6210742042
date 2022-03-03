@@ -15,6 +15,14 @@ class PostController extends Controller
 
     }
 
+    public function show() {
+        
+        $posts = Post::all();
+
+        return view('posts.course', ['posts' => $posts]);
+
+    }
+
     public function create() {
         
 

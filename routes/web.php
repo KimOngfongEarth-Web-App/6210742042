@@ -16,14 +16,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
     return view('homepage');
 });
 
+// Route::get('/home', function () {
+//     return view('homepage');
+// });
+
+
+
+
 Route::get('/posts',[PostController ::class, "index"]);
+
+Route::get('/course',[PostController ::class, "show"]);
 
 Route::get('/posts/create',[PostController ::class, "create"]);
 Route::post('/posts',[PostController ::class, "store"]);
