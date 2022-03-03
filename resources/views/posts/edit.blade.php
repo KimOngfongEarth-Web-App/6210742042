@@ -3,7 +3,18 @@
 <head>
 <title>Page Title</title>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- bulma css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+
+<style>
+    /* body {font-family: 'Athiti', sans-serif;} */
+    body {font-family: 'Roboto', sans-serif;}
+    .block {margin-left:7.5% ; margin-right: 7.5%;}
+    .columns {margin-left:7.5% ; margin-right: 7.5%;}
+    #app2 {font-family: 'Athiti', sans-serif;}
+    
+</style>
 </head>
 <body>
 
@@ -14,26 +25,24 @@
 @method('PUT')
 
 @csrf
+    
 
-<div class="w-full max-w-xs">
-  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
-        Title
-      </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" name="title" value="{{ $post->title }}">
-    </div>
-    <div class="mb-6">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="content">
-        Content
-      </label>
-      <textarea class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="content" name="content" >{{ $post->content }}</textarea>
-    </div>
+    <div class="field">
+  <label class="label">Title</label>
+  <div class="control">
+    <input class="input" type="text" id="title" name="title" value="{{ $post->title }}">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Content</label>
+  <div class="control">
+    <textarea class="input" id="content" name="content">{{ $post->content }}</textarea>
+  </div>
+</div>
 
 
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Update
-      </button>
+<button class="button is-primary">Update</button>
 
 
 <form action="/posts/{{ $post->id }}">
@@ -42,9 +51,7 @@
 
   @method('DELETE')
 
-  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Delete
-</button>
+  <button class="button is-danger">Delete</button>
 </form>
 
   </form>
