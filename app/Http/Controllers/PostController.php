@@ -23,6 +23,14 @@ class PostController extends Controller
 
     }
 
+    public function liveSearch(Request $request) {
+        
+
+        $posts = Post::where('title', 'like', '%' . $request->get('searchRequest') .  '%' )->get();
+
+        return json_encode( $posts );
+    }
+
     public function create() {
         
 

@@ -68,7 +68,7 @@
           <nav class="navbar">
             <div class="container">
               <div class="navbar-brand">
-                <a class="navbar-item" style="font-family: 'Righteous', cursive; font-weight:bold; color: darkslateblue;">
+                <a href="/" class="navbar-item" style="font-family: 'Righteous', cursive; font-weight:bold; color: darkslateblue;">
                   ORD's
                 </a>
     
@@ -82,7 +82,7 @@
               </div>
               <div id="navbarMenuHeroA" class="navbar-menu" :class="{ 'is-active': showNav }">
                 <div class="navbar-end">
-                  <a class="navbar-item">
+                  <a href="/" class="navbar-item">
                     intro
                   </a>
                   <div class="navbar-item has-dropdown is-hoverable">

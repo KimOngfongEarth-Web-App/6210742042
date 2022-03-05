@@ -48,8 +48,6 @@
               Update
 </button>
 
-</form>
-
 <form action="/posts/{{ $post->id }}">
 
   @csrf
@@ -60,6 +58,19 @@
               Delete
   </button>
 </form>
+
+</form>
+
+<!-- <form action="/posts/{{ $post->id }}">
+
+  @csrf
+
+  @method('DELETE')
+
+  <button class="button is-block is-fullwidth is-danger is-medium is-rounded" type="submit">
+              Delete
+  </button>
+</form> -->
 
 
 
