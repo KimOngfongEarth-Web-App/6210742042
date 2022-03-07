@@ -48,7 +48,7 @@
 </table>
 </div>
 
-
+<a role="button is-info" href='/'> (home) </a>
 
 
 </body>
